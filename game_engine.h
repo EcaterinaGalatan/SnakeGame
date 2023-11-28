@@ -1,7 +1,7 @@
 #pragma once
-#include "apple.hpp"
-#include "snake.hpp"
-#include "board.hpp"
+#include "apple.h"
+#include "snake.h"
+#include "board.h"
 
 class GameEngine {
    Apple _apple;

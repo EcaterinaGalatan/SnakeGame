@@ -1,8 +1,8 @@
 #pragma once
 
-#include "apple.hpp"
-#include "direction.hpp"
-#include "point.hpp"
+#include "apple.h"
+#include "direction.h"
+#include "point.h"
 
 class Snake {
    Point _segments[100];
