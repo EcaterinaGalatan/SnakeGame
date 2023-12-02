@@ -1,6 +1,6 @@
-pragma once
+#pragma once
 
-#include "point.hpp"
+#include "point.h"
 
 class Painter {
 public:
