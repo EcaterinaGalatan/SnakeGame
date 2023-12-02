@@ -1,10 +1,18 @@
 #include "painter.h"
-#include <cstring> // For std::strlen
+#include <cstring>
+
+/**
+ * @file painter.cpp
+ * @brief Implementation of the Painter class functions.
+ * @author Ecaterina Galatan
+ * @date 2023
+ * @project Snake Game Lab 05
+ */
 
 // Default constructor
 Painter::Painter() {}
 
-// Constructor with parameters
+// Copy constructor
 Painter::Painter(const Painter &other) {}
 
 // Copy assignment operator

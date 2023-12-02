@@ -1,7 +1,46 @@
-1. Snake Game
-2. Работа, созданная для того чтобы научится работать с системой контроля кода GIT, а также получить базовые знания по организации проектов.
-3. "Змейка" (Snake) - это классическая аркадная игра, в которой игрок управляет змейкой, пытаясь съесть еду и при этом избегать столкновения с собственным хвостом и стенами игрового поля. Правила игры обычно следующие: Змейкой можно управлять с помощью клавиш или сенсорного экрана, в зависимости от платформы. Обычно используются клавиши со стрелками (вверх, вниз, влево, вправо) для изменения направления движения змейки.
-4. 
+# Snake Game Lab Work
+
+## Description
+
+This project implements a Snake Game as part of a laboratory work for the C++ course. The Snake Game is a classic arcade game where the player controls a snake that moves around the screen, eats apples, and grows longer over time. The goal is to achieve the highest score possible without colliding with the snake's own body or the game borders.
+
+## Project Dependencies
+
+- C++ compiler (supporting C++11 or later)
+- Make utility
+
+## Game Rules
+
+1. The game consists of a snake, represented by a series of connected segments, initially positioned on the game board.
+2. The snake moves continuously in a specific direction (up, down, left, or right).
+3. The player can change the snake's direction to navigate it around the game board.
+4. Apples are randomly placed on the board, and the snake can eat them to grow longer.
+5. The game ends if the snake collides with its own body or the game board borders.
+6. The objective is to achieve the highest score by eating apples and growing the snake.
+
+## Building the App
+
+To build the Snake Game, follow these steps:
+
+1. Open a terminal.
+2. Navigate to the project directory.
+
+   ```bash
+   cd path/to/snake-game-lab-05
+
+3. Run the following commands:
+    ```bash 
+    make clean
+    make
+
+The executable SnakeGame should be generated.
+
+4. To clean up generated files, run:
+    ```bash 
+    make clean
+
+
+## Files Description
 point.h -> Представляет точку в двумерном пространстве с координатами x и y. Объекты типа Point содержат две целочисленные координаты, x и y.
 apple.h -> Представляет яблоко на игровом поле. Объекты типа Apple содержат поле _position типа Point, которое определяет координаты яблока.
 direction.h -> Перечисление, представляющее возможные направления движения. Объекты типа Direction могут принимать одно из четырех значений: Top, Left, Right, Bottom, представляя верх, лево, право и низ соответственно.

@@ -1,7 +1,20 @@
 #include "direction.h"
-#include <stdexcept> // For std::invalid_argument
+#include <stdexcept>
 
-// Output operator
+/**
+ * @file direction.cpp
+ * @brief Implementation of the Direction operators.
+ * @author Ecaterina Galatan
+ * @date 2023
+ * @project Snake Game Lab 05
+ */
+
+/**
+ * @brief Output operator for Direction.
+ * @param os The output stream.
+ * @param direction The Direction value to be written.
+ * @return The output stream after writing the Direction.
+ */
 std::ostream &operator<<(std::ostream &os, const Direction &direction) {
     switch (direction) {
         case Direction::Top:
@@ -22,7 +35,12 @@ std::ostream &operator<<(std::ostream &os, const Direction &direction) {
     return os;
 }
 
-// Input operator
+/**
+ * @brief Input operator for Direction.
+ * @param is The input stream.
+ * @param direction The Direction value to be read.
+ * @return The input stream after reading the Direction.
+ */
 std::istream &operator>>(std::istream &is, Direction &direction) {
     std::string input;
     is >> input;

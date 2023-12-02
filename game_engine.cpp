@@ -1,5 +1,13 @@
 #include "game_engine.h"
 
+/**
+ * @file game_engine.cpp
+ * @brief Implementation of the GameEngine class functions.
+ * @author Ecaterina Galatan
+ * @date 2023
+ * @project Snake Game Lab 05
+ */
+
 // Default constructor
 GameEngine::GameEngine() {}
 

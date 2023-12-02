@@ -1,5 +1,13 @@
 #include "point.h"
 
+/**
+ * @file point.cpp
+ * @brief Implementation of the Point struct functions.
+ * @author Ecaterina Galatan
+ * @date 2023
+ * @project Snake Game Lab 05
+ */
+
 // Default constructor
 Point::Point() : x(0), y(0) {}
 

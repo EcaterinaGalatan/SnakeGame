@@ -1,6 +1,14 @@
 #include "snake.h"
 #include <iterator>
 
+/**
+ * @file snake.cpp
+ * @brief Implementation of the Snake class functions.
+ * @author Ecaterina Galatan
+ * @date 2023
+ * @project Snake Game Lab 05
+ */
+
 // Default constructor
 Snake::Snake() : _nr_segments(0), _name("") {}
 

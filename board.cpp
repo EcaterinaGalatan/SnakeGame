@@ -1,5 +1,13 @@
 #include "board.h"
 
+/**
+ * @file board.cpp
+ * @brief Implementation of the Board class functions.
+ * @author Ecaterina Galatan
+ * @date 2023
+ * @project Snake Game Lab 05
+ */
+
 // Default constructor
 Board::Board() : _width(20), _height(20) {}
 

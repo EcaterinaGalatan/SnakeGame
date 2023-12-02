@@ -1,5 +1,13 @@
 #include "apple.h"
 
+/**
+ * @file apple.cpp
+ * @brief Implementation of the Apple class functions.
+ * @author Ecaterina Galatan
+ * @date 2023
+ * @project Snake Game Lab 05
+ */
+
 // Default constructor
 Apple::Apple() : _position() {}
 
