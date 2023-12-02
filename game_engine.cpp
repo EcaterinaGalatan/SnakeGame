@@ -38,17 +38,5 @@ void GameEngine::Run() {
 
 // Comparison operator
 bool GameEngine::operator==(const GameEngine &other) const {
-    return (_apple == other._apple) && (_snake == other._snake) && (_board == other._board);
-}
-
-// Input operator
-std::istream &operator>>(std::istream &is, GameEngine &gameEngine) {
-    // Implement input logic if needed
-    return is;
-}
-
-// Output operator
-std::ostream &operator<<(std::ostream &os, const GameEngine &gameEngine) {
-    // Implement output logic if needed
-    return os;
+    return (_apple == other._apple) && (_board == other._board);
 }

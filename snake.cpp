@@ -1,83 +1,120 @@
 #include "snake.h"
+#include <iterator>
 
 // Default constructor
-Snake::Snake() : _nr_segments(0) {}
+Snake::Snake() : _nr_segments(0), _name("") {}
 
 // Constructor with parameters
-Snake::Snake(const Point &_position) : _nr_segments(1) {
-    _segments[0] = _position;
+Snake::Snake(const Point &_position, const std::string &name) : _nr_segments(1), _name(name) {
+    _segments.push_back(_position);
 }
 
 // Copy constructor
-Snake::Snake(const Snake &other) : _nr_segments(other._nr_segments) {
-    for (int i = 0; i < _nr_segments; ++i) {
-        _segments[i] = other._segments[i];
-    }
+Snake::Snake(const Snake &other) : _nr_segments(other._nr_segments), _name(other._name) {
+    std::copy(other._segments.begin(), other._segments.end(), std::back_inserter(_segments));
 }
 
 // Copy assignment operator
 Snake &Snake::operator=(const Snake &other) {
     if (this != &other) {
         _nr_segments = other._nr_segments;
-        for (int i = 0; i < _nr_segments; ++i) {
-            _segments[i] = other._segments[i];
-        }
+        _name = other._name;
+        _segments.clear();
+        std::copy(other._segments.begin(), other._segments.end(), std::back_inserter(_segments));
     }
     return *this;
 }
 
 // Destructor
 Snake::~Snake() {
-    // Release any dynamically allocated resources
+    // No dynamic memory to release, so no explicit cleanup needed
 }
 
 // Member function: Move
 void Snake::Move(Direction direction) {
-    // Implementation of Move
+    int delta_x = 0, delta_y = 0;
+
+    switch (direction) {
+        case Direction::Top:
+            delta_y = -1;
+            break;
+        case Direction::Bottom:
+            delta_y = 1;
+            break;
+        case Direction::Left:
+            delta_x = -1;
+            break;
+        case Direction::Right:
+            delta_x = 1;
+            break;
+    }
+
+    std::transform(_segments.begin() + 1, _segments.end(), _segments.begin(),
+                   [_delta_x = delta_x, _delta_y = delta_y](const Point &prev) {
+                       return Point{prev.x + _delta_x, prev.y + _delta_y};
+                   });
 }
 
 // Member function: GetSize
 int Snake::GetSize() const {
-    return _nr_segments;
+    return static_cast<int>(_segments.size());
 }
 
-// Member function: GetPosition
-Point Snake::GetPosition() const {
-    if (_nr_segments > 0) {
-        return _segments[0];
+// Member function: GetHeadPosition
+Point Snake::GetHeadPosition() const {
+    if (!_segments.empty()) {
+        return _segments.front();
     }
-    // Handle the case where the snake has no segments
-    return Point();
+    return Point(); // Handle the case where the snake has no segments
 }
 
 // Member function: Eat
 void Snake::Eat(const Apple &apple) {
-    // Implementation of Eat
+    if (_nr_segments < _segments.size()) {
+        _segments.push_back(apple.GetPosition());
+        _nr_segments++;
+    }
 }
 
-// Comparison operator
-bool Snake::operator==(const Snake &other) const {
-    if (_nr_segments != other._nr_segments) {
-        return false;
-    }
+// Additional functions using STL algorithms
 
-    for (int i = 0; i < _nr_segments; ++i) {
-        if (!(_segments[i] == other._segments[i])) {
-            return false;
-        }
-    }
+// Check if the snake contains a specific position
+bool Snake::ContainsPosition(const Point &position) const {
+    return std::find(_segments.begin(), _segments.end(), position) != _segments.end();
+}
 
-    return true;
+// Sort the segments based on x and y coordinates
+void Snake::SortSegments() {
+    std::sort(_segments.begin(), _segments.end());
+}
+
+// Copy segments from another snake
+void Snake::CopyFrom(const Snake &other) {
+    _segments.clear();
+    std::copy(other._segments.begin(), other._segments.end(), std::back_inserter(_segments));
+    _nr_segments = other._nr_segments;
+}
+
+// Comparison operator for less-than
+bool Snake::operator<(const Snake &other) const {
+    return _name < other._name;
 }
 
 // Input operator
 std::istream &operator>>(std::istream &is, Snake &snake) {
-    // Implement input logic if needed
+    is >> snake._name >> snake._nr_segments;
+
+    snake._segments.clear();
+    std::copy_n(std::istream_iterator<Point>(is), snake._nr_segments, std::back_inserter(snake._segments));
+
     return is;
 }
 
 // Output operator
 std::ostream &operator<<(std::ostream &os, const Snake &snake) {
-    // Implement output logic if needed
+    os << "Snake " << snake._name << " with " << snake._nr_segments << " segments:";
+    std::for_each(snake._segments.begin(), snake._segments.end(), [&os](const Point &segment) {
+        os << " " << segment;
+    });
     return os;
 }
