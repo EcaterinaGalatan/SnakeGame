@@ -5,8 +5,8 @@ enum class Direction {
     Top, Left, Right, Bottom
 };
 
-// Output operator
+// Оператор вывода
 std::ostream &operator<<(std::ostream &os, const Direction &direction);
 
-// Input operator
+// Оператор ввода
 std::istream &operator>>(std::istream &is, Direction &direction);
