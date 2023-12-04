@@ -1,17 +1,17 @@
 #include "game_engine.h"
 
-// Default constructor
+// Конструктор по умолчанию
 GameEngine::GameEngine() {}
 
-// Constructor with parameters
+// Коструктор с параметрами
 GameEngine::GameEngine(const Apple &apple, const Snake &snake, const Board &board)
     : _apple(apple), _snake(snake), _board(board) {}
 
-// Copy constructor
+// Конструктор копирования
 GameEngine::GameEngine(const GameEngine &other)
     : _apple(other._apple), _snake(other._snake), _board(other._board) {}
 
-// Copy assignment operator
+// Оператор копирования
 GameEngine &GameEngine::operator=(const GameEngine &other) {
     if (this != &other) {
         _apple = other._apple;
@@ -21,33 +21,33 @@ GameEngine &GameEngine::operator=(const GameEngine &other) {
     return *this;
 }
 
-// Destructor
+// Деструктор
 GameEngine::~GameEngine() {
-    // Release any dynamically allocated resources
+    // Код для освобождения (или возврата) ресурсов, которые были выделены динамически
 }
 
-// Member function: Init
+// Метод класса: Init
 void GameEngine::Init() {
     // Implementation of Init
 }
 
-// Member function: Run
+// Метод класса: Run
 void GameEngine::Run() {
     // Implementation of Run
 }
 
-// Comparison operator
+// Оператор сравнения
 bool GameEngine::operator==(const GameEngine &other) const {
     return (_apple == other._apple) && (_snake == other._snake) && (_board == other._board);
 }
 
-// Input operator
+// Оператор ввода
 std::istream &operator>>(std::istream &is, GameEngine &gameEngine) {
     // Implement input logic if needed
     return is;
 }
 
-// Output operator
+// Оператор вывода
 std::ostream &operator<<(std::ostream &os, const GameEngine &gameEngine) {
     // Implement output logic if needed
     return os;
