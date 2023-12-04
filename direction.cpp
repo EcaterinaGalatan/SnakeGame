@@ -1,7 +1,7 @@
 #include "direction.h"
 #include <stdexcept> // For std::invalid_argument
 
-// Output operator
+// Оператор вывода
 std::ostream &operator<<(std::ostream &os, const Direction &direction) {
     switch (direction) {
         case Direction::Top:
@@ -22,7 +22,7 @@ std::ostream &operator<<(std::ostream &os, const Direction &direction) {
     return os;
 }
 
-// Input operator
+// Оператор ввода
 std::istream &operator>>(std::istream &is, Direction &direction) {
     std::string input;
     is >> input;
