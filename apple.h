@@ -6,25 +6,25 @@ class Apple {
     Point _position;
 
 public:
-    // Default constructor
+    // Конструктор по умолчанию
     Apple();
 
-    // Constructor with parameters
+    // Конструктор с параметрами
     Apple(const Point &position);
 
-    // Copy constructor
+    // Конструктор копирования
     Apple(const Apple &other);
 
-    // Copy assignment operator
+    // Оператор копирования
     Apple &operator=(const Apple &other);
 
-    // Comparison operator
+    // Оператор сравнения
     bool operator==(const Apple &other) const;
 
-    // Input operator
+    // Оператор ввода
     friend std::istream &operator>>(std::istream &is, Apple &apple);
 
-    // Output operator
+    // Оператор вывода
     friend std::ostream &operator<<(std::ostream &os, const Apple &apple);
 
     // Getter function
