@@ -6,7 +6,7 @@ class Board {
     int _height;
 
 public:
-    // Constructors
+    // Конструкторы
     Board();
     Board(int width, int height);
     Board(const Board &other);
@@ -16,12 +16,12 @@ public:
     int GetWidth() const;
     int GetHeight() const;
 
-    // Comparison operator
+    // Оператор сравнения
     bool operator==(const Board &other) const;
 
-    // Input operator
+    // Оператор вывода
     friend std::istream &operator>>(std::istream &is, Board &board);
 
-    // Output operator
+    // Оператор ввода
     friend std::ostream &operator<<(std::ostream &os, const Board &board);
 };
