@@ -2,24 +2,24 @@
 
 /**
  * @file game_engine.cpp
- * @brief Implementation of the GameEngine class functions.
+ * @brief Реализация функций класса GameEngine.
  * @author Ecaterina Galatan
  * @date 2023
  * @project Snake Game Lab 05
  */
 
-// Default constructor
+// Конструктор по умолчанию
 GameEngine::GameEngine() {}
 
-// Constructor with parameters
+// Конструктор с параметрами
 GameEngine::GameEngine(const Apple &apple, const Snake &snake, const Board &board)
     : _apple(apple), _snake(snake), _board(board) {}
 
-// Copy constructor
+// Конструктор копирования
 GameEngine::GameEngine(const GameEngine &other)
     : _apple(other._apple), _snake(other._snake), _board(other._board) {}
 
-// Copy assignment operator
+// Оператор присваивания копирования
 GameEngine &GameEngine::operator=(const GameEngine &other) {
     if (this != &other) {
         _apple = other._apple;
@@ -29,22 +29,22 @@ GameEngine &GameEngine::operator=(const GameEngine &other) {
     return *this;
 }
 
-// Destructor
+// Деструктор
 GameEngine::~GameEngine() {
-    // Release any dynamically allocated resources
+    // Освобождение любых динамически выделенных ресурсов
 }
 
-// Member function: Init
+// Метод класса: Init
 void GameEngine::Init() {
-    // Implementation of Init
+    // Реализация метода Init
 }
 
-// Member function: Run
+// Метод класса: Run
 void GameEngine::Run() {
-    // Implementation of Run
+    // Реализация метода Run
 }
 
-// Comparison operator
+// Оператор сравнения
 bool GameEngine::operator==(const GameEngine &other) const {
     return (_apple == other._apple) && (_board == other._board);
 }
