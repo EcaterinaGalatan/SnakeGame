@@ -14,30 +14,30 @@ class Snake {
     std::string _name;
 
 public:
-    // Constructors
-    Snake();
-    Snake(const Point &_position, const std::string &name);
-    Snake(const Snake &other);
-    Snake &operator=(const Snake &other);
+    // Конструкторы
+    Snake();  // Конструктор по умолчанию
+    Snake(const Point &_position, const std::string &name);  // Конструктор с параметрами
+    Snake(const Snake &other);  // Конструктор копирования
+    Snake &operator=(const Snake &other);  // Оператор присваивания
 
-    // Destructor
+    // Деструктор
     ~Snake();
 
-    // Member functions
-    void Move(Direction direction);
-    int GetSize() const;
-    Point GetHeadPosition() const;
-    void Eat(const Apple &apple);
+    // Методы класса
+    void Move(Direction direction);  // Метод для перемещения змеи
+    int GetSize() const;  // Метод для получения размера змеи
+    Point GetHeadPosition() const;  // Метод для получения позиции головы змеи
+    void Eat(const Apple &apple);  // Метод для поедания яблока
 
-    // Additional functions using STL algorithms
-    bool ContainsPosition(const Point &position) const;
-    void SortSegments();
-    void CopyFrom(const Snake &other);
-    bool operator<(const Snake &other) const;
+    // Дополнительные функции, использующие алгоритмы STL
+    bool ContainsPosition(const Point &position) const;  // Метод для проверки наличия позиции в змее
+    void SortSegments();  // Метод для сортировки сегментов змеи
+    void CopyFrom(const Snake &other);  // Метод для копирования из другой змеи
+    bool operator<(const Snake &other) const;  // Оператор сравнения для змей
 
-    // Input operator
+    // Оператор ввода
     friend std::istream &operator>>(std::istream &is, Snake &snake);
 
-    // Output operator
+    // Оператор вывода
     friend std::ostream &operator<<(std::ostream &os, const Snake &snake);
 };
