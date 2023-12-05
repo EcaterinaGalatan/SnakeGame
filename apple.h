@@ -4,66 +4,66 @@
 
 /**
  * @file apple.h
- * @brief Definition of the Apple class.
+ * @brief Определение класса Apple.
  * @author Ecaterina Galatan
  * @date 2023
  * @project Snake Game Lab 05
  */
 
 class Apple {
-    Point _position; ///< Position of the Apple.
+    Point _position; ///< Позиция яблока.
 
 public:
     /**
-     * @brief Default constructor for Apple.
+     * @brief Конструктор по умолчанию для объекта Apple.
      */
     Apple();
 
     /**
-     * @brief Constructor with parameters for Apple.
-     * @param position The position of the Apple.
+     * @brief Конструктор с параметрами для объекта Apple.
+     * @param position Позиция яблока.
      */
     Apple(const Point &position);
 
     /**
-     * @brief Copy constructor for Apple.
-     * @param other The Apple object to be copied.
+     * @brief Конструктор копирования для объекта Apple.
+     * @param other Объект Apple, который будет скопирован.
      */
     Apple(const Apple &other);
 
     /**
-     * @brief Copy assignment operator for Apple.
-     * @param other The Apple object to be assigned.
-     * @return A reference to the assigned Apple.
+     * @brief Оператор присваивания копирования для объекта Apple.
+     * @param other Объект Apple, который будет присвоен.
+     * @return Ссылка на присвоенный объект Apple.
      */
     Apple &operator=(const Apple &other);
 
     /**
-     * @brief Comparison operator for Apple.
-     * @param other The Apple object to be compared.
-     * @return True if the Apples are equal, false otherwise.
+     * @brief Оператор сравнения для объекта Apple.
+     * @param other Объект Apple, с которым происходит сравнение.
+     * @return True, если яблоки равны, false в противном случае.
      */
     bool operator==(const Apple &other) const;
 
     /**
-     * @brief Input operator for Apple.
-     * @param is The input stream.
-     * @param apple The Apple object to be read.
-     * @return The input stream after reading the Apple.
+     * @brief Оператор ввода для объекта Apple.
+     * @param is Поток ввода.
+     * @param apple Объект Apple, который будет считан.
+     * @return Поток ввода после считывания объекта Apple.
      */
     friend std::istream &operator>>(std::istream &is, Apple &apple);
 
     /**
-     * @brief Output operator for Apple.
-     * @param os The output stream.
-     * @param apple The Apple object to be written.
-     * @return The output stream after writing the Apple.
+     * @brief Оператор вывода для объекта Apple.
+     * @param os Поток вывода.
+     * @param apple Объект Apple, который будет записан.
+     * @return Поток вывода после записи объекта Apple.
      */
     friend std::ostream &operator<<(std::ostream &os, const Apple &apple);
 
     /**
-     * @brief Getter function to retrieve the position of the Apple.
-     * @return The position of the Apple.
+     * @brief Функция-геттер для получения позиции яблока.
+     * @return Позиция яблока.
      */
     Point GetPosition() const;
 };
