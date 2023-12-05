@@ -3,74 +3,74 @@
 
 /**
  * @file board.h
- * @brief Definition of the Board class.
+ * @brief Определение класса Board.
  * @author Ecaterina Galatan
  * @date 2023
  * @project Snake Game Lab 05
  */
 
 class Board {
-    int _width; ///< Width of the Board.
-    int _height; ///< Height of the Board.
+    int _width; ///< Ширина доски.
+    int _height; ///< Высота доски.
 
 public:
     /**
-     * @brief Default constructor for Board.
+     * @brief Конструктор по умолчанию для объекта Board.
      */
     Board();
 
     /**
-     * @brief Constructor with parameters for Board.
-     * @param width The width of the Board.
-     * @param height The height of the Board.
+     * @brief Конструктор с параметрами для объекта Board.
+     * @param width Ширина доски.
+     * @param height Высота доски.
      */
     Board(int width, int height);
 
     /**
-     * @brief Copy constructor for Board.
-     * @param other The Board object to be copied.
+     * @brief Конструктор копирования для объекта Board.
+     * @param other Объект Board, который будет скопирован.
      */
     Board(const Board &other);
 
     /**
-     * @brief Copy assignment operator for Board.
-     * @param other The Board object to be assigned.
-     * @return A reference to the assigned Board.
+     * @brief Оператор присваивания копирования для объекта Board.
+     * @param other Объект Board, который будет присвоен.
+     * @return Ссылка на присвоенный объект Board.
      */
     Board &operator=(const Board &other);
 
     /**
-     * @brief Getter function to retrieve the width of the Board.
-     * @return The width of the Board.
+     * @brief Функция-геттер для получения ширины доски.
+     * @return Ширина доски.
      */
     int GetWidth() const;
 
     /**
-     * @brief Getter function to retrieve the height of the Board.
-     * @return The height of the Board.
+     * @brief Функция-геттер для получения высоты доски.
+     * @return Высота доски.
      */
     int GetHeight() const;
 
     /**
-     * @brief Comparison operator for Board.
-     * @param other The Board object to be compared.
-     * @return True if the Boards are equal, false otherwise.
+     * @brief Оператор сравнения для объекта Board.
+     * @param other Объект Board, с которым происходит сравнение.
+     * @return True, если доски равны, false в противном случае.
      */
     bool operator==(const Board &other) const;
 
     /**
-     * @brief Input operator for Board.
-     * @param is The input stream.
-     * @param board The Board object to be read.
-     * @return The input stream after reading the Board.
+     * @brief Оператор ввода для объекта Board.
+     * @param is Поток ввода.
+     * @param board Объект Board, который будет считан.
+     * @return Поток ввода после считывания объекта Board.
      */
     friend std::istream &operator>>(std::istream &is, Board &board);
 
     /**
-     * @brief Output operator for Board.
-     * @param os The output stream.
-     * @param board The Board object to be written.
-     * @return The output stream after writing the Board.
+     * @brief Оператор вывода для объекта Board.
+     * @param os Поток вывода.
+     * @param board Объект Board, который будет записан.
+     * @return Поток вывода после записи объекта Board.
      */
     friend std::ostream &operator<<(std::ostream &os, const Board &board);
 };
