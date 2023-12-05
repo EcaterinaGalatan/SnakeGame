@@ -2,22 +2,22 @@
 
 /**
  * @file apple.cpp
- * @brief Implementation of the Apple class functions.
+ * @brief Реализация функций класса Apple.
  * @author Ecaterina Galatan
  * @date 2023
  * @project Snake Game Lab 05
  */
 
-// Default constructor
+// Конструктор по умолчанию
 Apple::Apple() : _position() {}
 
-// Constructor with parameters
+// Конструктор с параметрами
 Apple::Apple(const Point &position) : _position(position) {}
 
-// Copy constructor
+// Конструктор копирования
 Apple::Apple(const Apple &other) : _position(other._position) {}
 
-// Copy assignment operator
+// Оператор присваивания копирования
 Apple &Apple::operator=(const Apple &other) {
     if (this != &other) {
         _position = other._position;
@@ -25,24 +25,24 @@ Apple &Apple::operator=(const Apple &other) {
     return *this;
 }
 
-// Comparison operator
+// Оператор сравнения
 bool Apple::operator==(const Apple &other) const {
     return _position == other._position;
 }
 
-// Input operator
+// Оператор ввода
 std::istream &operator>>(std::istream &is, Apple &apple) {
     is >> apple._position;
     return is;
 }
 
-// Output operator
+// Оператор вывода
 std::ostream &operator<<(std::ostream &os, const Apple &apple) {
-    os << "Apple at position: " << apple._position;
+    os << "Яблоко на позиции: " << apple._position;
     return os;
 }
 
-// Getter function
+// Функция-геттер
 Point Apple::GetPosition() const {
     return _position;
 }
