@@ -19,7 +19,7 @@ public:
     // Деструктор
     ~GameEngine();
 
-    // Member functions
+    // Методы класса
     void Init();
     void Run();
 
