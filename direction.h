@@ -3,31 +3,32 @@
 
 /**
  * @file direction.h
- * @brief Definition of the Direction enumeration and related operators.
+ * @brief Определение перечисления Direction и связанных с ним операторов.
  * @author Ecaterina Galatan
  * @date 2023
  * @project Snake Game Lab 05
  */
 
+// Перечисление Direction с четырьмя значениями: Top, Left, Right, Bottom.
 enum class Direction {
-    Top, ///< Top direction.
-    Left, ///< Left direction.
-    Right, ///< Right direction.
-    Bottom ///< Bottom direction.
+    Top,    ///< Направление вверх.
+    Left,   ///< Направление влево.
+    Right,  ///< Направление вправо.
+    Bottom  ///< Направление вниз.
 };
 
 /**
- * @brief Output operator for Direction.
- * @param os The output stream.
- * @param direction The Direction value to be written.
- * @return The output stream after writing the Direction.
+ * @brief Оператор вывода для перечисления Direction.
+ * @param os Поток вывода.
+ * @param direction Значение Direction для записи.
+ * @return Поток вывода после записи Direction.
  */
 std::ostream &operator<<(std::ostream &os, const Direction &direction);
 
 /**
- * @brief Input operator for Direction.
- * @param is The input stream.
- * @param direction The Direction value to be read.
- * @return The input stream after reading the Direction.
+ * @brief Оператор ввода для перечисления Direction.
+ * @param is Поток ввода.
+ * @param direction Значение Direction для считывания.
+ * @return Поток ввода после считывания Direction.
  */
 std::istream &operator>>(std::istream &is, Direction &direction);
