@@ -10,25 +10,25 @@ class GameEngine {
     Board _board;
 
 public:
-    // Constructors
+    // Конструкторы
     GameEngine();
     GameEngine(const Apple &apple, const Snake &snake, const Board &board);
     GameEngine(const GameEngine &other);
     GameEngine &operator=(const GameEngine &other);
 
-    // Destructor
+    // Деструктор
     ~GameEngine();
 
     // Member functions
     void Init();
     void Run();
 
-    // Comparison operator
+    // Оператор сравнения
     bool operator==(const GameEngine &other) const;
 
-    // Input operator
+    // Оператор ввода
     friend std::istream &operator>>(std::istream &is, GameEngine &gameEngine);
 
-    // Output operator
+    // Оператор вывода
     friend std::ostream &operator<<(std::ostream &os, const GameEngine &gameEngine);
 };
