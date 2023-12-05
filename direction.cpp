@@ -3,58 +3,58 @@
 
 /**
  * @file direction.cpp
- * @brief Implementation of the Direction operators.
+ * @brief Реализация операторов для перечисления Direction.
  * @author Ecaterina Galatan
  * @date 2023
  * @project Snake Game Lab 05
  */
 
 /**
- * @brief Output operator for Direction.
- * @param os The output stream.
- * @param direction The Direction value to be written.
- * @return The output stream after writing the Direction.
+ * @brief Оператор вывода для перечисления Direction.
+ * @param os Поток вывода.
+ * @param direction Значение Direction для записи.
+ * @return Поток вывода после записи Direction.
  */
 std::ostream &operator<<(std::ostream &os, const Direction &direction) {
     switch (direction) {
         case Direction::Top:
-            os << "Top";
+            os << "Вверх";
             break;
         case Direction::Left:
-            os << "Left";
+            os << "Влево";
             break;
         case Direction::Right:
-            os << "Right";
+            os << "Вправо";
             break;
         case Direction::Bottom:
-            os << "Bottom";
+            os << "Вниз";
             break;
         default:
-            throw std::invalid_argument("Invalid direction");
+            throw std::invalid_argument("Недопустимое направление");
     }
     return os;
 }
 
 /**
- * @brief Input operator for Direction.
- * @param is The input stream.
- * @param direction The Direction value to be read.
- * @return The input stream after reading the Direction.
+ * @brief Оператор ввода для перечисления Direction.
+ * @param is Поток ввода.
+ * @param direction Значение Direction для считывания.
+ * @return Поток ввода после считывания Direction.
  */
 std::istream &operator>>(std::istream &is, Direction &direction) {
     std::string input;
     is >> input;
 
-    if (input == "Top") {
+    if (input == "Вверх") {
         direction = Direction::Top;
-    } else if (input == "Left") {
+    } else if (input == "Влево") {
         direction = Direction::Left;
-    } else if (input == "Right") {
+    } else if (input == "Вправо") {
         direction = Direction::Right;
-    } else if (input == "Bottom") {
+    } else if (input == "Вниз") {
         direction = Direction::Bottom;
     } else {
-        throw std::invalid_argument("Invalid direction input");
+        throw std::invalid_argument("Недопустимый ввод направления");
     }
 
     return is;
