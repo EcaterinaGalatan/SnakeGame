@@ -29,4 +29,7 @@ public:
 
     // Getter function
     Point GetPosition() const;
+
+    int stuff(int a, int b);
 };
+
